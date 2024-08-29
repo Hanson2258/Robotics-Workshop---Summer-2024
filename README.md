@@ -1,3 +1,8 @@
+# Welcome
+The following repository is programs for Brandon's Summer workshop, hosted by Esquimalt High school.
+
+# README from forked library
+
 ## NOTICE
 
 This repository contains the public FTC SDK for the CENTERSTAGE (2023-2024) competition season.
