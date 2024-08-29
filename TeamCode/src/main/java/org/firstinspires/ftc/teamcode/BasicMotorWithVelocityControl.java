@@ -35,7 +35,7 @@ public class BasicMotorWithVelocityControl extends LinearOpMode {
 
             dcMotor.setVelocity(ticksPerSecond);
 
-            // Show power and runtime
+            // Show power, velocity and runtime
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addData("Motor Power: ", "%4.2f", dcMotor.getPower());
             telemetry.addData("Desired Motor Velocity: ", "%4.2f", ticksPerSecond);
