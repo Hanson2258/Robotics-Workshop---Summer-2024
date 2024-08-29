@@ -34,7 +34,7 @@ public class BasicMotorWithPowerCompensation extends LinearOpMode {
 
         // Run until stop is pressed
         while (opModeIsActive()) {
-            double power = gamepad1.left_stick_y;
+            double power = -gamepad1.left_stick_y;
             double currentVoltage = voltageSensor.getVoltage();
 
             double adjustedPower = power * (12/currentVoltage);
