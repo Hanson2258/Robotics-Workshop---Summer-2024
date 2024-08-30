@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.VoltageSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -23,6 +24,7 @@ public class BasicMotorWithPowerCompensation extends LinearOpMode {
         voltageSensor = hardwareMap.get(VoltageSensor.class, "Control Hub");
 
         dcMotor.setDirection(DcMotorEx.Direction.FORWARD);
+        dcMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Display waiting for Init
         telemetry.addData("Status", "Initialized");
@@ -46,6 +48,7 @@ public class BasicMotorWithPowerCompensation extends LinearOpMode {
             telemetry.addData("Raw Motor Power: ", "%4.2f", power);
             telemetry.addData("Motor Voltage: ", "%4.2f", currentVoltage);
             telemetry.addData("Adjusted Motor Power: ", "%4.2f", adjustedPower);
+            telemetry.addData("Encoder Value: ", "%4.2f", dcMotor.getCurrentPosition());
             telemetry.update();
         }
     }
